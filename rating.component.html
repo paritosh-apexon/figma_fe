@@ -1,0 +1,22 @@
+<div class="rating-container">
+  <h3>Rate This Section</h3>
+
+  <div class="stars">
+    <span *ngFor="let star of stars"
+          (click)="selectStar(star)"
+          [style.color]="star <= selectedRating ? 'gold' : 'gray'"
+          style="font-size: 24px; cursor: pointer;">
+      ★
+    </span>
+  </div>
+
+  <textarea [(ngModel)]="comment"
+            placeholder="Optional comment"
+            rows="3"
+            style="width: 100%; margin-top: 10px;">
+  </textarea>
+
+  <button (click)="submit()" style="margin-top: 10px;">
+    {{ alreadyRated ? 'Update Rating' : 'Submit Rating' }}
+  </button>
+</div>
